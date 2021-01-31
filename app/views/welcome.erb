@@ -1,0 +1,11 @@
+<div class="container">
+  <nav>
+    <% if logged_in? %>
+    Logged In as: <%= current_user.name %>
+    <a href="/logout">Logout</a>"
+    <% else %>
+    <a href="/register">Register</a>
+    <a href="/login">Login</a>
+    <% end %>
+  </nav>
+</div>
