@@ -1,0 +1,9 @@
+ALL MEETINGS
+
+<% @meetings.each do |meeting| %>
+    <h4><a href="/meetings/<%= meeting.id %>"><%= meeting.name %></a></h4>
+    <strong><%= meeting.subject %></strong>
+    <p><%= meeting.note %></p>
+    <p><%= meeting.assignment %></p>
+    <br><br>
+<% end %>

@@ -15,14 +15,13 @@
 - has many students
 - has many plans, through students
 
-## Meeting
+## Notes
 #### Attributes
 - Meeting date
-- Meeting topic
-- Student questions
-- Reponses
-- Next meeting todo
-- 
+- Meeting subject
+- Notes
+- Assignments
+
 #### Associations
 - has many students
 - has many users (counselor), through students
