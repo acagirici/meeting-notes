@@ -19,14 +19,26 @@ class MeetingsController < ApplicationController
     end
 
     get '/meetings/:id' do
-        set_meeting
+        @meeting = Meeting.find(params[:id])
         erb :'/meetings/show'
     end
 
-    private
+    get '/meetings/:id/edit' do
+        @meeting = Meeting.find(params[:id])
+        erb :'/meetings/edit'
+    end
 
-    def set_meeting
-      @meeting = Meeting.find(params[:id])
+    patch '/meetings/:id' do
+        @meeting = Meeting.find(params[:id])
+        @meeting.update(name: params[:name], date: params[:date], user_id: current_user.id, subject: params[:subject], note: params[:note], assignment: params[:assignment])
+        
+        redirect "/meetings/#{@meeting.id}"
+    end
+
+    delete "/meetings/:id" do
+        Meeting.destroy(params[:id])
+        flash[:message] = "Meeting Seccessfully Deleted!"
+        redirect '/meetings'
     end
     
 end

@@ -20,8 +20,8 @@
         <nav>
           <% if logged_in? %>
           Logged In as: <%= current_user.name %>
-          <a href="/meetings">Meetings</a>
-          <a href="/students">Students</a>
+          <a href="/meetings">All Meetings</a>
+          <a href="/meetings/new">New Meeting</a>
           <a href="/logout">Logout</a>
           <% end %>
         </nav>
@@ -37,7 +37,7 @@
         
 
       <footer class="branding">
-        <small>&copy; 2021 <strong>SinatraPlanningTool</strong></small>
+        <small>&copy; 2021 <strong>SinatraMeetingTrackerApp</strong></small>
       </footer>
     </div>
 

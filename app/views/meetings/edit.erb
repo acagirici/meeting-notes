@@ -1,0 +1,25 @@
+EDIT YOUR MEETING DETAILS BELOW:
+
+<form class="" action="/meetings/<%= @meeting.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+
+    <label for="date">Date:</lable>
+    <input type="date" name="date" id="date" value="<%= @meeting.date %>"><br><br>
+    <label for="name">Client Name:</lable>
+    <input type="text" name="name" id="name" value="<%= @meeting.name %>"><br><br>
+    <label for="subject">Meeting Subject:</lable>
+    <input list="subject" name="subject" value="<%= @meeting.subject %>"><br><br>
+        <datalist id="subject">
+            <option value="College Guidance">
+            <option value="Career Guidance">
+            <option value="Financial Aid">
+            <option value="Follow-up">
+            <option value="Updates">
+        </datalist>
+    <label for="note">Notes:</lable>
+    <textarea name="note" id="note" rows="5" cols="60"><%= @meeting.note %></textarea><br><br>
+    <label for="assignment">Next Meeting To Dos:</lable>
+    <textarea name="assignment" id="assignment" rows="5" cols="60"><%= @meeting.assignment %></textarea><br><br>
+
+    <input type="submit" value="Edit Entry">
+</form>
