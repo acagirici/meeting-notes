@@ -25,7 +25,12 @@ class MeetingsController < ApplicationController
 
     get '/meetings/:id/edit' do
         @meeting = Meeting.find(params[:id])
-        erb :'/meetings/edit'
+
+        if edit_authorization(@meeting)
+            erb :'/meetings/edit'
+        else
+            redirect 'users/#{curent_user.id}'
+        end
     end
 
     patch '/meetings/:id' do

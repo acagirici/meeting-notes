@@ -22,10 +22,16 @@ class UsersController < ApplicationController
         @user = User.find_by(:email => params[:email])
         if @user && @user.authenticate(params[:password])
             session["user_id"] = @user.id
-            redirect "/"
+            redirect "/users/#{@user.id}"
         else
             erb :'users/login'
         end
+    end
+
+    get '/users/:id' do
+        @user = User.find_by(params[:id])
+        
+        erb :'users/show'
     end
 
     get '/logout' do

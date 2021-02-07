@@ -31,6 +31,11 @@ class ApplicationController < Sinatra::Base
         redirect '/'
       end
     end
+
+    def edit_authorization(meeting)
+      meeting.user == current_user
+    end
+    
   end
 
 end
