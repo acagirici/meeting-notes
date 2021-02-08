@@ -1,10 +1,16 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/two.css" />
+  </head>
+
 <br><h2>ALL MEETINGS</h2></br>
 
+<div class="counter">
 <p>
 <% @meetings.each do |meeting| %>
-    <h4><a href="/meetings/<%= meeting.id %>"><%= meeting.id %>. Client Name: <%= meeting.name %></a></h4>
+    <h4><a href="/meetings/<%= meeting.id %>">Client Name: <%= meeting.name %></a></h4>
     <strong>Subject: <%= meeting.subject %></strong>
     <p>Submitted By: <%= meeting.user.name %>
     <br><br>
 <% end %>
 </p>
+</div>

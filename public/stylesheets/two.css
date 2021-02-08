@@ -1,0 +1,12 @@
+.counter {
+    list-style-type: none;
+    counter-reset: css-counter 0; 
+  }
+  
+  .counter h4 {
+    counter-increment: css-counter 1; 
+  }
+  
+  .counter h4:before {
+    content: counter(css-counter) ". "; 
+  }

@@ -5,6 +5,7 @@ class MeetingsController < ApplicationController
     end
 
     get '/meetings' do
+        authentication_required
         @meetings = Meeting.all
         erb :'meetings/index'
     end
