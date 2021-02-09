@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id' do
-        @user = User.find_by(params[:id])
+        @user = User.find_by(:email => params[:email])
         
         erb :'users/show'
     end
